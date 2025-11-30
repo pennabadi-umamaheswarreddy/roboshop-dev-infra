@@ -184,7 +184,7 @@ resource "aws_route53_record" "redis" {
   allow_overwrite = true
 }
 
-resource "aws_route53_record" "mysql" {
+resource "aws_route53_record" "mysql1" {
   zone_id = var.zone_id
   name    = "mysql-${var.environment}.${var.domain_name}" # mysql-dev.umamaheswarreddy.fun
   type    = "A"
