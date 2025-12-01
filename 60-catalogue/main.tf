@@ -96,10 +96,10 @@ resource "aws_launch_template" "catalogue" {
     resource_type = "instance"
 
     tags = merge{
-        local.common_tags,
-        {
-            Name = "${local.common_name_suffix}-catalogue"
-        }
+      local.common_tags,
+      {
+        Name = "${local.common_name_suffix}-catalogue"
+      }
     }
   }
 
