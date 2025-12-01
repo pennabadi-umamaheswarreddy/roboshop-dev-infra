@@ -184,7 +184,7 @@ resource "aws_autoscaling_policy" "catalogue" {
 
 
 resource "aws_lb_listener_rule" "catalogue" {
-  listener_arn = 
+  listener_arn = local.backend_alb_listener_arn
   priority     = 100
 
   action {
@@ -194,7 +194,7 @@ resource "aws_lb_listener_rule" "catalogue" {
 
   condition {
     host_header {
-      values = ["catalogue.backend-alb-${var.environment}.${var.domain_name}"
+      values = ["catalogue.backend-alb-${var.environment}.${var.domain_name}"]
     }
   }
 }
