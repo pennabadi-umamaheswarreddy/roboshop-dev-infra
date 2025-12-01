@@ -135,9 +135,9 @@ resource "aws_instance" "mysql" {
   )
 }
 
-resource "aws_iam_instance_profile" "mysql"{
+resource "aws_iam_instance_profile" "mysql1"{
   name = "mysql"
-  role = "EC2SSMParameterRead1"
+  role = "EC2SSMParameterRead"
 }
 
 resource "terraform_data" "mysql" {
