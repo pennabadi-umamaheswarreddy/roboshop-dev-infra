@@ -107,21 +107,21 @@ resource "aws_launch_template" "catalogue" {
   tag_specifications {
     resource_type = "volume"
 
-    tags = merge{
+    tags = merge (
         local.common_tags,
         {
             Name = "${local.common_name_suffix}-catalogue"
         }
-    }
+    )
   }
 
   #tags attached to the launch template
-  tags = merge{
+  tags = merge (
         local.common_tags,
         {
             Name = "${local.common_name_suffix}-catalogue"
         }
-  }   
+  )  
 
 }
 
