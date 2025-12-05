@@ -167,8 +167,8 @@ resource "aws_autoscaling_group" "catalogue" {
   }
 }
 
+
 resource "aws_autoscaling_policy" "catalogue" {
-  # ... other configuration ...
   autoscaling_group_name = aws_autoscaling_group.catalogue.name
   name                   = "${local.common_name_suffix}-catalogue"
   policy_type            = "TargetTrackingScaling"
@@ -182,10 +182,9 @@ resource "aws_autoscaling_policy" "catalogue" {
   }
 }
 
-
 resource "aws_lb_listener_rule" "catalogue" {
   listener_arn = local.backend_alb_listener_arn
-  priority     = 100
+  priority     = 10
 
   action {
     type             = "forward"
